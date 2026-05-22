@@ -6,6 +6,8 @@ import img1 from "../assets/images/1.svg";
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
+    const token = localStorage.getItem("token");
+
     return (
         <nav className="bg-[#263238] text-white sticky top-0 z-50 shadow-xl">
 
@@ -44,9 +46,30 @@ export default function Navbar() {
                         Books
                     </Link>
 
-                    <button className="bg-yellow-400 hover:bg-orange-500 duration-300 text-black px-5 py-2 rounded-xl font-semibold">
-                        Login
-                    </button>
+                    {!token ? (
+                        <>
+                            <Link
+                                to="/register"
+                                className="hover:text-yellow-400 duration-300"
+                            >
+                                Register
+                            </Link>
+
+                            <Link
+                                to="/login"
+                                className="bg-yellow-400 hover:bg-orange-500 duration-300 text-black px-5 py-2 rounded-xl font-semibold"
+                            >
+                                Login
+                            </Link>
+                        </>
+                    ) : (
+                        <Link
+                            to="/profile"
+                            className="hover:text-yellow-400 duration-300"
+                        >
+                            Profile
+                        </Link>
+                    )}
 
                 </div>
 
@@ -88,9 +111,33 @@ export default function Navbar() {
                         Books
                     </Link>
 
-                    <button className="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold">
-                        Login
-                    </button>
+                    {!token ? (
+                        <>
+                            <Link
+                                to="/register"
+                                onClick={() => setOpen(false)}
+                                className="text-xl hover:text-yellow-400"
+                            >
+                                Register
+                            </Link>
+
+                            <Link
+                                to="/login"
+                                onClick={() => setOpen(false)}
+                                className="bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold"
+                            >
+                                Login
+                            </Link>
+                        </>
+                    ) : (
+                        <Link
+                            to="/profile"
+                            onClick={() => setOpen(false)}
+                            className="text-xl hover:text-yellow-400"
+                        >
+                            Profile
+                        </Link>
+                    )}
 
                 </div>
             )}

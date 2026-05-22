@@ -37,16 +37,16 @@ export default function Home() {
 
                     {/* RIGHT */}
                     <div className="relative flex justify-center">
-                        <img src={heroImg} className="w-[520px]" alt="hero" />
+                        {/* <img src={heroImg} className="w-130" alt="hero" /> */}
 
                         <img
                             src={icon1}
-                            className="absolute top-[80px] left-[40px] w-[40px]"
+                            className="absolute top-[20px] right-[700px] w-[40px]"
                             alt="icon"
                         />
                         <img
                             src={icon2}
-                            className="absolute top-[40px] right-[60px] w-[60px]"
+                            className="absolute top-[-280px] right-[60px] w-[660px]"
                             alt="icon"
                         />
                     </div>

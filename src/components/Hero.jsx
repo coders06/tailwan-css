@@ -1,4 +1,4 @@
-import img1 from "../assets/images/1.svg";   // katta hero rasm
+
 import img2 from "../assets/images/2.svg";
 import img3 from "../assets/images/3.svg";
 
@@ -39,14 +39,7 @@ export default function Hero() {
                         </button>
                     </div>
 
-                    {/* RIGHT – KATTA RASM */}
-                    <div className="flex justify-center">
-                        <img
-                            src={img1}
-                            alt="hero"
-                            className="w-full max-w-md"
-                        />
-                    </div>
+
                 </div>
 
                 {/* ================= SKILLS ================= */}
